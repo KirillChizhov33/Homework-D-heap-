@@ -1,4 +1,4 @@
-#include "Header.h"
+#include "Heap.h"
 int main()
 {
 	DQ Temp(10);
