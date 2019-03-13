@@ -1,4 +1,4 @@
-#include "Heap.h"
+#include "Header.h"
 int main()
 {
 	DQ Temp(10);
@@ -26,5 +26,17 @@ int main()
 	Temp.insert(N10);
 	cout << "\nTasks in the heap:\n";
 	Temp.show();
+	Task A1 = Temp.deleteRoot();
+	Task A2 = Temp.deleteRoot();
+	Task A3 = Temp.deleteRoot();
+	Task A4 = Temp.deleteRoot();
+	Task A5 = Temp.deleteRoot();
+	Task A6 = Temp.deleteRoot();
+	Task A7 = Temp.deleteRoot();
+	Task A8 = Temp.deleteRoot();
+	Task A9 = Temp.deleteRoot();
+	Task A10 = Temp.deleteRoot();
+	cout << "\nOrdered tasks in the heap:\n";
+	cout << A1 << "\n" << A2 << "\n" << A3 << "\n" << A4 << "\n" << A5 << "\n" << A6 << "\n" << A7 << "\n" << A8 << "\n" << A9 << "\n" << A10 << "\n";
 	return 0;
 }
