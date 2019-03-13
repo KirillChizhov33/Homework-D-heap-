@@ -55,7 +55,9 @@ class DQ
 public:
 	DQ(int _size);
 	void insert(Task value);
-	void deleteRoot();
+	Task deleteRoot();
 	void deleteCur(int i);
 	void show();
+	void order();
 };
+
