@@ -2,10 +2,10 @@
 DQ::DQ(int _size)
 {
 	size = _size;
-	mem = new int[size];
+	mem = new Task[size];
 	cur = 0;
 }
-void DQ::insert(int value)
+void DQ::insert(Task value)
 {
 	if (cur + 1 > size)
 	{
@@ -18,11 +18,11 @@ void DQ::insert(int value)
 	j = (i + 1) / 2 - 1;
 	while (j >= 0)
 	{
-		if (mem[j] >= mem[i])
+		if (mem[j].GetPrior() >= mem[i].GetPrior())
 		{
 			return;
 		}
-		int t;
+		Task t;
 		t = mem[j];
 		mem[j] = mem[i];
 		mem[i] = t;
@@ -52,15 +52,15 @@ void DQ::deleteRoot()
 	while (left <= cur)
 	{
 		int ind = left;
-		if (mem[ind] <= mem[right])
+		if (mem[ind].GetPrior() <= mem[right].GetPrior())
 		{
 			ind = right;
 		}
-		if (mem[i] > mem[ind])
+		if (mem[i].GetPrior() > mem[ind].GetPrior())
 		{
 			return;
 		}
-		int temp = mem[i];
+		Task temp = mem[i];
 		mem[i] = mem[ind];
 		mem[ind] = temp;
 		i = ind;
@@ -96,15 +96,15 @@ void DQ::deleteCur(int i)
 	while (left <= cur)
 	{
 		int ind = left;
-		if (mem[ind] <= mem[right])
+		if (mem[ind].GetPrior() <= mem[right].GetPrior())
 		{
 			ind = right;
 		}
-		if (mem[i] > mem[ind])
+		if (mem[i].GetPrior() > mem[ind].GetPrior())
 		{
 			return;
 		}
-		int temp = mem[i];
+		Task temp = mem[i];
 		mem[i] = mem[ind];
 		mem[ind] = temp;
 		i = ind;
