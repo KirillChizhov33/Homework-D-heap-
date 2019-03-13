@@ -1,4 +1,4 @@
-#include "Header.h"
+#include "Heap.h"
 DQ::DQ(int _size)
 {
 	size = _size;
@@ -30,12 +30,13 @@ void DQ::insert(Task value)
 		j = (i + 1) / 2 - 1;
 	}
 }
-void DQ::deleteRoot()
+Task DQ::deleteRoot()
 {
 	if (cur == -1)
 	{
 		throw - 1;
 	}
+	Task Ex = mem[0];
 	mem[0] = mem[cur - 1];
 	cur--;
 	int i, left, right;
@@ -58,7 +59,7 @@ void DQ::deleteRoot()
 		}
 		if (mem[i].GetPrior() > mem[ind].GetPrior())
 		{
-			return;
+			return Ex;
 		}
 		Task temp = mem[i];
 		mem[i] = mem[ind];
@@ -74,6 +75,7 @@ void DQ::deleteRoot()
 			right = cur;
 		}
 	}
+	return Ex;
 }
 void DQ::deleteCur(int i)
 {
@@ -125,4 +127,12 @@ void DQ::show()
 	{
 		cout << i + 1 << ")" << mem[i] << endl;
 	}
+}
+void DQ::order()
+{
+	int i = 0;
+	int left, right;
+	left = (i + 1) * 2 - 1;
+	right = left + 1;
+	
 }
